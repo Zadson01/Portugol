@@ -5,7 +5,7 @@ programa
 	{
 		real total = 0.0
 		caracter tam_pizza, pedido
-		cadeia sabor, bebida, opcao
+		cadeia sabor, bebida, opcao, pepperoni, queijo
 
 		escreva ("Olá eu sou seu assistente virtual, vou te auxliar com as informações")
 		escreva("Deseja realizar o pedido: 1 - sim ou 2 - não: ")
@@ -29,7 +29,7 @@ programa
 	     senao se (tam_pizza == 'f' ou tam_pizza == 'F' ) {
           total = 30.0 
 	     }
-	     
+	     limpa()
 	     escreva(" Informe o sabor: c - calabresa , q - Queijo , a - Americana, p - portuguesa: " )
 	     leia(sabor)
 	     se (sabor == "c" ) {
@@ -61,8 +61,23 @@ programa
 	     total = total + 5
 	     opcao = " Refrigerante"
 	      }
-	      
-	      escreva (" tamanho da pizza: " , tam_pizza , "\n" , "Sabor da pizza: " , sabor , "\n" , "Bebida: " , opcao , "\n" , "Valor total: " , total , "\n" )
+	      limpa()
+	      escreva(" Deseja pepperoni: s ou n: " )
+	      leia(pepperoni)
+	      se (pepperoni == "s" ) {
+	      total = total + 3
+	      pepperoni = "Pepperoni: + 3 "
+	      }
+	      limpa()
+	      escreva( "Deseja acrescentar queijo: s ou n: " )
+	      leia (queijo)
+	      se (queijo == "s") {
+	      total = total + 1
+	      queijo = "Queijo: +1 "
+	      limpa()
+	      }
+	      escreva (" tamanho da pizza: " , tam_pizza , "\n" , "Sabor da pizza: " , sabor , "\n" , "Bebida: " , opcao , "\n" , "Pepperoni: " , pepperoni , "\n" , "Queijo: " , queijo , "\n" , "Valor total: " , total , "\n" ) 
+	      escreva("Obrigado pela preferencia " , "\n")
 	}
 	}
 }
@@ -71,7 +86,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1538; 
+ * @POSICAO-CURSOR = 1808; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
